@@ -43,11 +43,12 @@ public class Student_Controller {
 		@GetMapping("/getAll")
 		public ResponseEntity<List<Student>> getAll() {
 
-				List<Student> user = new ArrayList<Student>();
-				studentRepo.findAll().forEach(user::add);
+				List<Student> student = new ArrayList<Student>();
+				studentRepo.findAll().forEach(student::add);
 	
-				if (user.isEmpty()) {
-					return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+				if (student.isEmpty()) {
+					//  return new ResponseEntity<>(HttpStatus.NO_CONTENT);  OR
+			        	throw new ResourceNotFoundException("No data found");
 				}
 
 			return new ResponseEntity<>(user, HttpStatus.OK);
