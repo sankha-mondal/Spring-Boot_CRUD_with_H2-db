@@ -51,7 +51,7 @@ public class Student_Controller {
 			        	throw new ResourceNotFoundException("No data found");
 				}
 
-			return new ResponseEntity<>(user, HttpStatus.OK);
+			return new ResponseEntity<>(student, HttpStatus.OK);
 		}
 
 //=============================================================================================================================================
